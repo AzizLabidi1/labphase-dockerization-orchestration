@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    app: react-express-mysql-frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: react-express-mysql-frontend
+  template:
+    metadata:
+      labels:
+        app: react-express-mysql-frontend
+    spec:
+      containers:
+      - name: frontend-container
+        image: node:16
+        ports:
+        - containerPort: 8082
+
+

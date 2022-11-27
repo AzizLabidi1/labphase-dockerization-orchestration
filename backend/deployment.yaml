@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    app: react-express-mysql-backend
+spec: 
+  replicas: 3
+  selector: 
+    matchLabels:
+      app: react-express-mysql-backend
+  template:
+    metadata:
+      labels:
+        app: react-express-mysql-backend
+    spec: 
+      containers:
+      - name: backend-container
+        image: node:16
+        ports:
+        - containerPort: 8080  
+
+    
+
+

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: db-backend-service
+spec:
+  type: ClusterIP
+  selector:
+    app: react-express-mysql-db
+  ports:
+   - protocol: TCP 
+     port: 81
+     targetPort: 8081

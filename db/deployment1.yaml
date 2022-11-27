@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db
+  labels:
+    app: react-express-mysql-db
+spec:
+  selector:
+    matchLabels:
+      app: react-express-mysql-db
+  template:
+    metadata:
+      labels:
+        app: react-express-mysql-db
+    spec:
+      containers:
+      - name: db-container
+        image: mariadb:10.6.4
+        ports:
+        - containerPort: 8081
+
+
